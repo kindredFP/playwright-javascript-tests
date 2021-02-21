@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "mocha": "^8.1.3",
+    "playwright": "^1.8.1"
+  },
+  "scripts": {
+    "test": "mocha --no-timeouts 'tests/*.js'"
+  },
+  "name": "playwrighttest",
+  "description": "Sample automated tests created using playwright.",
+  "version": "1.0.0",
+  "main": "",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "author": "Francis",
+  "license": "MIT"
+}
