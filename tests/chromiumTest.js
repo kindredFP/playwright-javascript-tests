@@ -1,4 +1,5 @@
 const { chromium } = require('playwright');
+const expect = require ('expect');
 
 describe('chromiumTest', function () {
   let browser, page
@@ -26,6 +27,9 @@ describe('chromiumTest', function () {
     await page.click('text="Show Message"');
 
     await page.screenshot({ path: `chromiumTest.png` });
+
+    const answer = await page.textContent('#display');
+    expect(answer).toEqual('This is my sample message.');
 
   })
   
