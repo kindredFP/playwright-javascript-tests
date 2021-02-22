@@ -1,4 +1,5 @@
 const { firefox } = require('playwright');
+const expect = require('expect');
 
 describe('firefoxTest', function () {
   let browser, page
@@ -26,6 +27,9 @@ describe('firefoxTest', function () {
 
     await page.screenshot({ path: `firefoxTest.png` });
 
+    const answer = await page.textContent('#display');
+    expect(answer).toEqual('This is my sample message.');
+    
   })
-  
+
 })
