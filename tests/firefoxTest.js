@@ -5,7 +5,8 @@ describe('firefoxTest', function () {
   let browser, page
 
   before(async () => {
-    browser = await firefox.launch({ headless: false });
+    // add {headless: false inside launch if you want it to be headful}
+    browser = await firefox.launch();
   })
   after(async () => {
     await browser.close();

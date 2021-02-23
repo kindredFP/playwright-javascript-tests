@@ -5,7 +5,8 @@ describe('chromiumTest', function () {
   let browser, page
 
   before(async () => {
-    browser = await chromium.launch({ headless: false });
+    // add {headless: false inside launch if you want it to be headful}
+    browser = await chromium.launch();
   })
   after(async () => {
     await browser.close();
