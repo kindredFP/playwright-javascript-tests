@@ -2,7 +2,9 @@
   "devDependencies": {
     "@playwright/test": "^1.31.2"
   },
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test"
+  },
   "name": "playwrighttest",
   "description": "Sample automated tests created using playwright.",
   "version": "1.0.0",
