@@ -1,9 +1,14 @@
 const { test, expect, chromium } = require('@playwright/test');
 
-  test('test', async () => {
-    const browser = await chromium.launch();
-    const context = await browser.newContext({ignoreHTTPSErrors: true});
-    const page  = await context.newPage();
+test.describe('Allows you to control browser context and closing it to capture videos on failures', () => {
+
+  test.afterEach(async ({context}) => {
+    await context.close();
+  });
+
+  test('test', async ({context}) => {
+
+    const page = await context.newPage();
 
     await page.goto('https://demo.seleniumeasy.com/basic-first-form-demo.html');
 
@@ -18,11 +23,11 @@ const { test, expect, chromium } = require('@playwright/test');
 
     // Another test scenario
     await page.getByLabel("Enter a").click()
-    await page.fill('#value1','1');
-    
+    await page.fill('#value1', '1');
+
     // Enter second value
     await page.getByLabel("Enter b").click()
-    await page.fill("#value2",'2');
+    await page.fill("#value2", '2');
 
     await page.pause();
     // Click on button
@@ -31,7 +36,7 @@ const { test, expect, chromium } = require('@playwright/test');
     // Retrieve sum
     const sum = await page.locator('#displayvalue').textContent();
     expect(sum).toEqual('3');
-
-    await browser.close();
   })
+
+});
 
