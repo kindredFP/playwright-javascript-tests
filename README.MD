@@ -32,7 +32,9 @@ https://playwright.dev
 
 Online Test Website used:  
 https://demo.playwright.dev/todomvc
+
 https://parabank.parasoft.com/parabank/index.htm
+
 https://demo.seleniumeasy.com
 
 
