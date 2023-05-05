@@ -15,8 +15,6 @@ test('test logging in to a demo bank', async ({ page }) => {
   await page.getByRole('button', { name: 'Transfer' }).click();
   await expect(page.getByText('$1000.00 has been transferred from account #14121 to account #14121.')).toBeVisible();
 
-  // add delay to see video
-  await page.waitForTimeout(3000);
 });
 
 
